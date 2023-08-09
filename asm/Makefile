@@ -25,18 +25,18 @@ $(COLLEEN):		Colleen.s
 
 $(GRACE):		Grace.s
 				$(ASM) $(ASMFLAGS) Grace.s
-				$(LD) $(LDFLAGS) -e main Grace.o -o $(GRACE)
+				$(LD) $(LDFLAGS) Grace.o -o $(GRACE)
 
 $(SULLY):		Sully.s
 				$(ASM) $(ASMFLAGS) Sully.s
 				$(LD) $(LDFLAGS) -e main Sully.o -o $(SULLY)
 
 clean:
-				rm -rf Colleen.o Grace.o Sully.o
+				rm -rf Colleen.o Grace.o Grace_kid.s Sully.o
 
 fclean:			clean
 				rm -rf $(COLLEEN) $(GRACE) $(SULLY)
 
-re:				clean all
+re:				fclean all
 
 .PHONY:			re clean fclean all
