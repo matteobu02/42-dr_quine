@@ -21,8 +21,11 @@ $(SULLY):		Sully.c
 				$(CXX) $(CXXFLAGS) Sully.c -o $(SULLY)
 
 clean:
-				rm -rf $(COLLEEN) $(GRACE) Grace_kid.c $(SULLY)
+				rm -rf Grace_kid.c Sully_*
 
-re:				clean all
+fclean:			clean
+				rm -rf $(COLLEEN) $(GRACE) $(SULLY)
 
-.PHONY:			re clean all
+re:				fclean all
+
+.PHONY:			re fclean clean all
