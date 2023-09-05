@@ -19,11 +19,11 @@ _start:
 	mov rdi, rax
 	call dprintf
 
-	xor rax, rax
+	xor rdi, rdi
 	call exit
 
 .error:
-	mov rax, 1
+	mov rdi, 1
 	call exit
 %endmacro
 
