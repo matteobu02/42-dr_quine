@@ -1,13 +1,7 @@
 ASM			=	nasm
 LD			=	ld
-ASMFLAGS	=	-f
+ASMFLAGS	=	-felf64
 LDFLAGS		=	--dynamic-linker /lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 -lc
-
-ifeq ($(shell uname), Linux)
-	ASMFLAGS += elf64
-else
-	ASMFLAGS += macho64
-endif
 
 COLLEEN		=	Colleen
 GRACE		=	Grace
